@@ -1,0 +1,108 @@
+body {
+    display: grid;
+    grid-template-rows: 3fr 25fr 1fr;
+    grid-template-areas: 
+    "head",
+    "body",
+    "footer";
+    max-height: 100vh;
+    /* font-family: 'Finger Paint', cursive; */
+    font-family: 'Permanent Marker', cursive;
+}
+
+main {
+    background-color: rgba(68, 100, 38, 0.243);
+    padding: 3em;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    background-color: rgba(172, 255, 94, 0.452);
+    box-shadow: 7px 7px 7px 7px #e2f2fb4d;
+    text-decoration: none;
+    position: relative;
+}
+
+#header:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px; 
+    margin-bottom: -4px;
+    bottom: 0;
+    left: 0;
+    box-shadow: 7px 7px 7px 7px #e2f2fb;
+    /* background-color: black; */
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+#header:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#header-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+a {
+    display: inline-block;
+    margin-left: 2em;
+    text-decoration: none;
+    position: relative;
+    color: black;
+}
+a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    margin-bottom: -4px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+footer {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    font-size: 60px;
+    color: black;
+    text-shadow: 0px 0px 10px #ffffff4f, 0 0 10px #ffffff59, 0 0 15px #e2f2fb, 0 0 20px #e2f2fb, 0 0 25px #e2f2fb, 0 0 30px #e2f2fb, 0 0 35px #e2f2fb;
+}
+#title:hover {
+    text-shadow: 20px 20px 40px #fff, 0 0 10px #fff, 0 0 15px rgb(233, 254, 213), 0 0 20px rgb(233, 254, 213), 0 0 25px rgb(233, 254, 213), 0 0 30px rgb(233, 254, 213), 0 0 35px rgb(233, 254, 213);
+    transition: text-shadow 0.25s ease-out;
+}
+#title:hover:after {
+    text-shadow: 0px 0px 10px #fff, 0 0 10px #fff, 0 0 15px #e2f2fb, 0 0 20px #e2f2fb, 0 0 25px #e2f2fb, 0 0 30px #e2f2fb, 0 0 35px #e2f2fb;
+    transition: text-shadow 2s ease-in;
+}
+
+
+
+#title-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

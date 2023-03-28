@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/f09a77e663.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+  <section id="header">
+    <nav id="title-nav">
+        <h1 id="title">Gratitude</h1>
+        <ul id="header-links">
+            <li>
+            <a  href="{% url 'information_home' %}">Home</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a  href="#">Dashboard</a>
+            </li>
+            {% endif %}
+            <li>
+            <a  href="{% url 'posts' %}">Posts</a>
+            </li>
+            <li>
+              <a href="{% url 'orgs' %}">Organisations</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="auth-nav">
+        {% if user.is_authenticated %}
+          <span>Logged in as: <span class="logged-in-username">{{ user.username }}</span></span>
+          <span> | </span>
+          <a href="{% url 'accounts_logout' %}">Log out</a>
+        {% else %}
+          <a href="{% url 'accounts_login' %}">Log In</a>
+          <span> | </span>
+          <a href="{% url 'accounts_register' %}">Register</a>
+        {% endif %}
+    </nav>
+  </section>
+  <main>
+      {% block content %}
+          
+      {% endblock  %}
+  </main>
+  <footer>
+    <p>Gratitude by Sean</p>
+  </footer>
+</body>
+</html>
