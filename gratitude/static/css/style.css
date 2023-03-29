@@ -11,19 +11,45 @@ body {
 }
 
 main {
-    background-color: rgba(68, 100, 38, 0.243);
-    padding: 3em;
+    background-color: rgba(0, 0, 0, 0.744);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.content {
+    width: 60vw;
+    height: 70%;
+    border-radius: 0.7em;
+    border: solid 0.1px rgba(0, 0, 0, 0.347);
+    background-color: rgb(254, 255, 191);
+    box-shadow:1px 1px 10px 10px #e2f2fb4d;
+    transition: box-shadow 0.25s ease-in;
+    padding: 3em;
+    border: solid 5px rgba(0, 0, 0, 0.479);
+    overflow: scroll;
+
+}
+
+.content:hover {
+    /* transform: scaleX(0); */
+    box-shadow: 1px 1px 10px 10px #e2f2fb;
+    margin: -5px;
+    transition:0.25s ease-out;
+}
+
 
 #header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 2em;
-    background-color: rgba(172, 255, 94, 0.452);
+    height: 2.5em;
+    padding: 0.5em;
+    background-color: rgba(192, 105, 160, 0.831);
     box-shadow: 7px 7px 7px 7px #e2f2fb4d;
     text-decoration: none;
     position: relative;
+    font-size: 1.5em;
 }
 
 #header:after {
@@ -31,29 +57,30 @@ main {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 5px; 
-    margin-bottom: -4px;
+    height: 1%; 
+    margin-bottom: -1px;
     bottom: 0;
     left: 0;
     box-shadow: 7px 7px 7px 7px #e2f2fb;
-    /* background-color: black; */
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
 #header:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+    /* border-bottom: solid 5px rgba(0, 0, 0, 0.479); */
 }
 
 #header-links {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 
 a {
     display: inline-block;
-    margin-left: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
     text-decoration: none;
     position: relative;
     color: black;
@@ -71,6 +98,7 @@ a:after {
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
+
 a:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -78,25 +106,44 @@ a:hover:after {
 
 
 footer {
-    background-color: bisque;
+    background-color: rgba(251, 241, 43, 0.452);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
+    box-shadow: 1px 1px 10px 10px #e2f2fb4d;
+
 }
 
-#title {
-    font-size: 60px;
+.title {
+    font-size: 1em;
+    text-shadow: 0px 0px 10px #ffffff4f, 0 0 10px #ffffff59, 0 0 15px #e2f2fb, 0 0 20px #e2f2fb, 0 0 25px #e2f2fb, 0 0 30px #e2f2fb, 0 0 35px #e2f2fb;
+    color: white;
+    text-shadow: 0px 0px 10px #ffffff4f, 0 0 10px #ffffff59, 0 0 15px #000000, 0 0 20px #000000, 0 0 25px #000000, 0 0 30px #000000, 0 0 35px #000000;
+    transition: 0.25s color ease-out;
+}
+
+#title-head {
+    font-size: 3em;
+    margin-left: 0.5em;
+}
+
+.title:hover {
     color: black;
     text-shadow: 0px 0px 10px #ffffff4f, 0 0 10px #ffffff59, 0 0 15px #e2f2fb, 0 0 20px #e2f2fb, 0 0 25px #e2f2fb, 0 0 30px #e2f2fb, 0 0 35px #e2f2fb;
+    transition: 0.25s ease-out;
+    width: 0%;
 }
-#title:hover {
-    text-shadow: 20px 20px 40px #fff, 0 0 10px #fff, 0 0 15px rgb(233, 254, 213), 0 0 20px rgb(233, 254, 213), 0 0 25px rgb(233, 254, 213), 0 0 30px rgb(233, 254, 213), 0 0 35px rgb(233, 254, 213);
-    transition: text-shadow 0.25s ease-out;
+.title:after {
+    color: black;
+    text-shadow: 0px 0px 10px #ffffff4f, 0 0 10px #ffffff59, 0 0 15px #e2f2fb, 0 0 20px #e2f2fb, 0 0 25px #e2f2fb, 0 0 30px #e2f2fb, 0 0 35px #e2f2fb;
+    transition: 0.25s ease-out;
+    width: 0%;
 }
-#title:hover:after {
-    text-shadow: 0px 0px 10px #fff, 0 0 10px #fff, 0 0 15px #e2f2fb, 0 0 20px #e2f2fb, 0 0 25px #e2f2fb, 0 0 30px #e2f2fb, 0 0 35px #e2f2fb;
-    transition: text-shadow 2s ease-in;
-}
+/* #title:before {
+    color: black;
+    text-shadow: 0px 0px 10px #ffffff4f, 0 0 10px #ffffff59, 0 0 15px #e2f2fb, 0 0 20px #e2f2fb, 0 0 25px #e2f2fb, 0 0 30px #e2f2fb, 0 0 35px #e2f2fb;
+    width: 0%;
+} */
 
 
 

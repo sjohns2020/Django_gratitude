@@ -18,40 +18,55 @@
 <body>
   <section id="header">
     <nav id="title-nav">
-        <h1 id="title">Gratitude</h1>
         <ul id="header-links">
             <li>
-            <a  href="{% url 'information_home' %}">Home</a>
+            <a id="title-head" class="title" href="{% url 'information_home' %}">Gratitude</a>
             </li>
             {% if user.is_authenticated %}
             <li>
-                <a  href="#">Dashboard</a>
+                <a class="title" href="{% url 'dashboard' %}">Dashboard</a>
             </li>
             {% endif %}
             <li>
-            <a  href="{% url 'posts' %}">Posts</a>
+            <a class="title" href="{% url 'posts' %}">Posts</a>
             </li>
             <li>
-              <a href="{% url 'orgs' %}">Organisations</a>
+              <a class="title" href="{% url 'orgs' %}">Organisations</a>
             </li>
         </ul>
     </nav>
     <nav class="auth-nav">
+      <ul id="header-links">
         {% if user.is_authenticated %}
-          <span>Logged in as: <span class="logged-in-username">{{ user.username }}</span></span>
-          <span> | </span>
-          <a href="{% url 'accounts_logout' %}">Log out</a>
+        <li>
+          <span class="title" > Logged in: <span >{{ user.username  }} </span></span>
+        </li>
+        <li>
+          <p  class="title" >  | </p>
+          </li>  
+            <li>
+          <a class="title"  href="{% url 'accounts_logout' %}"> Logout</a>
+        </li>
         {% else %}
-          <a href="{% url 'accounts_login' %}">Log In</a>
-          <span> | </span>
-          <a href="{% url 'accounts_register' %}">Register</a>
+
+        <li>
+          <a class="title"  href="{% url 'accounts_login' %}">Login  </a>
+        </li>
+        <li>
+        <p  class="title" > | </p>
+        </li>  
+          <a class="title"  href="{% url 'accounts_register' %}"> Register</a>
+        </li>
         {% endif %}
+      </ul>
     </nav>
   </section>
   <main>
+    <div class="content">
       {% block content %}
           
       {% endblock  %}
+    </div>
   </main>
   <footer>
     <p>Gratitude by Sean</p>
